@@ -4,11 +4,15 @@ require "testsprite"
 
 class Scene
   def initialize
-    # @img = ImageSurface.new(32, 32, [128, 255, 128, 64])
-    @img = ImageSurface.load("sample.png")
-    p @img.width
-    p @img.height
-    p @img.filename
+    @img0 = ImageSurface.load("sample.png")
+    p @img0.width
+    p @img0.height
+    p @img0.filename
+    
+    @img1 = ImageSurface.new(64, 64, [128, 255, 128, 64])
+    p @img1.width
+    p @img1.height
+    p @img1.filename
     
     @sprs = []
     num = 128
@@ -17,7 +21,8 @@ class Scene
       r = rand * 4.0 + 1.0
       dx = r * Math.cos(rad)
       dy = r * Math.sin(rad)
-      @sprs.push(TestSprite.new(320, 240, @img, dx, dy))
+      img = (i <= num /2)? @img0 : @img1
+      @sprs.push(TestSprite.new(320, 240, img, dx, dy))
     end
   end
 
