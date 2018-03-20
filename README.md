@@ -78,7 +78,7 @@ Start "MSYS2 MinGW 32-bit (32bit)"
 
 ### Build mruby + mruby-require
 
-#### Doenload mruby
+#### Download mruby
 
     $ cd ~
     $ mkdir prg
